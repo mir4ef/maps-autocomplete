@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -15,7 +15,7 @@ import { UspsService } from './usps.service';
   templateUrl: './usps.component.html',
   styleUrls: ['./usps.component.scss'],
 })
-export class UspsComponent implements AfterViewInit, OnDestroy {
+export class UspsComponent implements OnInit, OnDestroy {
   @ViewChild('googlePlacesDetails', { static: true })
   private googlePlacesDetails!: ElementRef<HTMLDivElement>;
 
@@ -61,7 +61,7 @@ export class UspsComponent implements AfterViewInit, OnDestroy {
     private readonly service: UspsService,
   ) { }
 
-  public ngAfterViewInit(): void {
+  public ngOnInit(): void {
     this.googlePlacesService = new google.maps.places.PlacesService(this.googlePlacesDetails.nativeElement);
   }
 

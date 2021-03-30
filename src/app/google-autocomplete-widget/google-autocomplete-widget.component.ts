@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import PlaceResult = google.maps.places.PlaceResult;
 
@@ -7,7 +7,7 @@ import PlaceResult = google.maps.places.PlaceResult;
   templateUrl: './google-autocomplete-widget.component.html',
   styleUrls: ['./google-autocomplete-widget.component.scss'],
 })
-export class GoogleAutocompleteWidgetComponent implements AfterViewInit {
+export class GoogleAutocompleteWidgetComponent implements OnInit {
   @ViewChild('googleAutocompleteWidget', { static: true })
   private googleWidget!: ElementRef<HTMLInputElement>;
 
@@ -20,7 +20,7 @@ export class GoogleAutocompleteWidgetComponent implements AfterViewInit {
     private readonly formBuilder: FormBuilder,
   ) { }
 
-  public ngAfterViewInit(): void {
+  public ngOnInit(): void {
     this.autocomplete = new google
       .maps
       .places

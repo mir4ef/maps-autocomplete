@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import AutocompletePrediction = google.maps.places.AutocompletePrediction;
 import PlaceResult = google.maps.places.PlaceResult;
@@ -10,7 +10,7 @@ import PlaceDetailsRequest = google.maps.places.PlaceDetailsRequest;
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.scss']
 })
-export class GoogleMapsComponent implements AfterViewInit {
+export class GoogleMapsComponent implements OnInit {
   @ViewChild('googlePlacesDetails', { static: true })
   private googlePlacesDetails!: ElementRef<HTMLDivElement>;
 
@@ -27,7 +27,7 @@ export class GoogleMapsComponent implements AfterViewInit {
     private readonly cdr: ChangeDetectorRef,
   ) { }
 
-  public ngAfterViewInit(): void {
+  public ngOnInit(): void {
     this.googlePlacesService = new google.maps.places.PlacesService(this.googlePlacesDetails.nativeElement);
   }
 
