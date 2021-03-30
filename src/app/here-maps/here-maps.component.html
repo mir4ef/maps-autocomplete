@@ -1,0 +1,12 @@
+<h2>Here Maps Autocomplete</h2>
+<form [formGroup]="mapForm">
+  <label>Here Maps: </label>
+  <p-autoComplete
+    formControlName="here"
+    [suggestions]="results"
+    (completeMethod)="search($event)"
+    field="title"
+    [delay]="delay"
+    (onSelect)="handleSelect($event)"
+  ></p-autoComplete>
+</form>

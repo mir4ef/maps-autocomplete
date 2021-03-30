@@ -1,0 +1,12 @@
+<h2>MapQuest Autocomplete</h2>
+<form [formGroup]="mapForm">
+  <label>MapQuest: </label>
+  <p-autoComplete
+    formControlName="mapQuest"
+    [suggestions]="results"
+    (completeMethod)="search($event)"
+    field="displayString"
+    [delay]="delay"
+    (onSelect)="handleSelect($event)"
+  ></p-autoComplete>
+</form>

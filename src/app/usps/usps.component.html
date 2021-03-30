@@ -1,0 +1,50 @@
+<h2>Address Autocomplete and USPS Address Validation</h2>
+<!--
+ Used to initialize the Google Places Service, however,
+ it is not used to display anything. The Places Service
+ is used with the Google Autocomplete Service.
+-->
+<div #googlePlacesDetails></div>
+
+<form [formGroup]="mapForm">
+  <label>Google Maps: </label>
+  <p-autoComplete
+    formControlName="google"
+    [suggestions]="googleMapsResults"
+    (completeMethod)="searchGoogle($event)"
+    field="description"
+    [delay]="delay"
+    (onSelect)="handleSelect($event)"
+  ></p-autoComplete>
+</form>
+
+<hr />
+
+<div>
+  <h3>Google Response</h3>
+  <p>Selected option from Google suggestions: <span class="result">{{ googleAddress.selectedOption }}</span></p>
+  <p>Selected option formatted by Google: <span class="result">{{ googleAddress.responseFormattedAddress }}</span></p>
+  <p>Street number: <span class="result">{{ googleAddress.streetNumber }}</span></p>
+  <p>Street name: <span class="result">{{ googleAddress.streetName }}</span></p>
+  <p>City: <span class="result">{{ googleAddress.city }}</span></p>
+  <p>County (or Urbanization): <span class="result">{{ googleAddress.county ? googleAddress.county : googleAddress.urbanization ? '(' + googleAddress.urbanization + ')' : '' }}</span></p>
+  <p>State: <span class="result">{{ googleAddress.state }}</span></p>
+  <p>Country: <span class="result">{{ googleAddress.country }}</span></p>
+  <p>Zip: <span class="result">{{ googleAddress.zip }}</span></p>
+  <p>Zip suffix: <span class="result">{{ googleAddress.zipSuffix }}</span></p>
+</div>
+
+<hr />
+
+<div>
+  <h3>USPS Response</h3>
+  <p>Address 1: <span class="result">{{ uspsAddress.address1 }}</span></p>
+  <p>Address 2: <span class="result">{{ uspsAddress.address2 }}</span></p>
+  <p>City: <span class="result">{{ uspsAddress.uspsCity }}</span></p>
+  <p>State: <span class="result">{{ uspsAddress.uspsState }}</span></p>
+  <p>Urbanization: <span class="result">{{ uspsAddress.uspsUrbanization }}</span></p>
+  <p>Zip: <span class="result">{{ uspsAddress.uspsZip }}</span></p>
+  <p>Zip suffix: <span class="result">{{ uspsAddress.uspsZipSuffix }}</span></p>
+  <p>Return Text: <span class="result">{{ uspsAddress.responseText }}</span></p>
+  <p>Error: <span class="result">{{ uspsAddress.uspsError }}</span></p>
+</div>

@@ -1,0 +1,12 @@
+<h2>Bing Maps Autocomplete</h2>
+<form [formGroup]="mapForm">
+  <label>Bing Maps: </label>
+  <p-autoComplete
+    formControlName="bing"
+    [suggestions]="results"
+    (completeMethod)="search($event)"
+    field="address.formattedAddress"
+    [delay]="delay"
+    (onSelect)="handleSelect($event)"
+  ></p-autoComplete>
+</form>

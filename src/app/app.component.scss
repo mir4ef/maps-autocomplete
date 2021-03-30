@@ -1,0 +1,15 @@
+nav {
+  a {
+    color: lightseagreen;
+
+    &.active {
+      color: lightskyblue;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

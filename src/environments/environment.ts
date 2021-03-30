@@ -3,6 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  bingMapsKey: 'XXXXX', // TODO insert valid key
+  hereMapsKey: 'XXXXX', // TODO insert valid key
+  mapQuestKey: 'XXXXX', // TODO insert valid key
+  uspsKey: 'XXXXX', // TODO insert valid key
   production: false
 };
 

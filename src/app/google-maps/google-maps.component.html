@@ -1,0 +1,19 @@
+<h2>Google Maps Autocomplete</h2>
+<!--
+ Used to initialize the Google Places Service, however,
+ it is not used to display anything. The Places Service
+ is used with the Google Autocomplete Service.
+-->
+<div #googlePlacesDetails></div>
+
+<form [formGroup]="mapForm">
+  <label>Google Maps: </label>
+  <p-autoComplete
+    formControlName="google"
+    [suggestions]="results"
+    (completeMethod)="search($event)"
+    field="description"
+    [delay]="delay"
+    (onSelect)="handleSelect($event)"
+  ></p-autoComplete>
+</form>
