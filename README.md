@@ -1,15 +1,16 @@
 # Maps
 
 Examples of address autocomplete search with:
- - Google Autocomplete Widget
- - Google Autocomplete Service
- - Here Maps
- - Bing Maps
- - MapQuest
+ - [Google Autocomplete Widget](https://developers.google.com/maps/documentation/javascript/places-autocomplete#add-autocomplete)
+ - [Google Autocomplete Service](https://developers.google.com/maps/documentation/javascript/places-autocomplete#place_autocomplete_service)
+ - [Here Maps](https://developer.here.com/documentation/maps/3.1.24.0/dev_guide/topics/geocoding.html)
+ - [Bing Maps](https://docs.microsoft.com/en-us/bingmaps/rest-services/autosuggest)
+ - [MapQuest](https://developer.mapquest.com/documentation/searchahead-api/)
 
-Also, there is an example validating if an address is a valid USPS deliverable shipping address. 
+Also, there is an example validating if an address is a valid USPS deliverable shipping address using the [USPS Address validation API](https://www.usps.com/business/web-tools-apis/address-information-api.htm#_Toc39492052). 
 
-The examples are built using [Angular](https://angular.io/).
+The examples are built using [Angular](https://angular.io/). Even though Angular is used, the services used
+are generic and can easily be used with vanilla JavaScript or any other framework.
 
 **Note: You need to provide API keys for each one of these services if you would like to try them out!** 
 
