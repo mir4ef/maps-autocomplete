@@ -25,6 +25,6 @@ export class MapQuestService {
             limit: '15', // max is 15
           },
         }
-      )
+      );
   }
 }
